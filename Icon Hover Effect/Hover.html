@@ -1,0 +1,108 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Hover Effect</title>
+</head>
+
+<style>
+    body {
+        margin: 0;
+
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;    
+    }
+    .hover {
+        opacity: 0;
+        position:absolute;
+        background-color: white;
+        width: 75px;
+        height: 12px;
+        margin: 29% 0 auto 0;
+        border-radius: 3px;
+        transition: transform 800ms ease-in-out;
+    }
+    .beam {
+        opacity: .5;
+        position:inherit;
+        background: linear-gradient(to top, #00000000 0%, #ffffff82 100%);
+        width: 0px;
+        height: 0px;
+        margin: 16% 0 auto -18;
+        border-bottom: 72px solid rgba(255, 255, 255, 0.208);
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        height: 0;
+        width: 60px;
+
+    }
+    .inner-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;   
+        background-color: black;
+        width: 80%;
+        height: 80px;
+        margin: 30% 0 auto 0;
+        border-radius: 20px;
+    }
+    .icon {
+        background-color: rgb(140, 140, 140);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin: auto 0 auto 0;
+    }
+
+</style>
+
+
+<body>
+
+<div class="container">
+    <div id="hover" class="hover">
+        <div class="beam">
+
+        </div>
+    </div>
+    <div class="inner-container">
+        <div id="icon1" class="icon"></div>
+        <div id="icon2" class="icon"></div>
+        <div id="icon3" class="icon"></div>
+        <div id="icon4" class="icon"></div>
+    </div>
+</div>
+
+
+
+</body>
+
+<script>
+    let hoverChange = document.getElementById("hover");
+
+    document.getElementById("icon1").addEventListener("click", function() {
+        hoverChange.style.transform = "translate(-290px, 50%)";
+        hoverChange.style.opacity = "1";
+    });
+    document.getElementById("icon2").addEventListener("click", function() {
+        hoverChange.style.transform = "translate(-97px, 50%)";
+        hoverChange.style.opacity = "1";
+    });
+    document.getElementById("icon3").addEventListener("click", function() {
+        hoverChange.style.transform = "translate(97px, 50%)";
+        hoverChange.style.opacity = "1";
+    });
+    document.getElementById("icon4").addEventListener("click", function() {
+        hoverChange.style.transform = "translate(290px, 50%)";
+        hoverChange.style.opacity = "1";
+    });
+    
+
+</script>
+
+</html>
+
