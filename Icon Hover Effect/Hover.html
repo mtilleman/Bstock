@@ -4,12 +4,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Icon Hover Effect</title>
+
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+
 </head>
 
 <style>
     body {
         margin: 0;
 
+    }
+    i {
+        color: white;
+        font-size: 48px;
     }
     .container {
         display: flex;
@@ -45,13 +53,12 @@
         flex-direction: row;
         justify-content: space-around;   
         background-color: black;
-        width: 80%;
+        width: 50%;
         height: 80px;
         margin: 30% 0 auto 0;
         border-radius: 20px;
     }
     .icon {
-        background-color: rgb(140, 140, 140);
         width: 50px;
         height: 50px;
         border-radius: 50%;
@@ -70,10 +77,10 @@
         </div>
     </div>
     <div class="inner-container">
-        <div id="icon1" class="icon"></div>
-        <div id="icon2" class="icon"></div>
-        <div id="icon3" class="icon"></div>
-        <div id="icon4" class="icon"></div>
+        <div id="icon1" class="icon"><i class="las la-home"></i></div>
+        <div id="icon2" class="icon"><i class="las la-bookmark"></i></div>
+        <div id="icon3" class="icon"><i class="las la-user"></i></div>
+        <div id="icon4" class="icon"><i class="las la-cog"></i></div>
     </div>
 </div>
 
@@ -85,19 +92,19 @@
     let hoverChange = document.getElementById("hover");
 
     document.getElementById("icon1").addEventListener("click", function() {
-        hoverChange.style.transform = "translate(-290px, 50%)";
+        hoverChange.style.transform = "translate(-182px, 50%)";
         hoverChange.style.opacity = "1";
     });
     document.getElementById("icon2").addEventListener("click", function() {
-        hoverChange.style.transform = "translate(-97px, 50%)";
+        hoverChange.style.transform = "translate(-61px, 50%)";
         hoverChange.style.opacity = "1";
     });
     document.getElementById("icon3").addEventListener("click", function() {
-        hoverChange.style.transform = "translate(97px, 50%)";
+        hoverChange.style.transform = "translate(60px, 50%)";
         hoverChange.style.opacity = "1";
     });
     document.getElementById("icon4").addEventListener("click", function() {
-        hoverChange.style.transform = "translate(290px, 50%)";
+        hoverChange.style.transform = "translate(180px, 50%)";
         hoverChange.style.opacity = "1";
     });
     
