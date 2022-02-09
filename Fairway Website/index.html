@@ -1,0 +1,343 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FairwayTV</title>
+</head>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-align:calc(2);
+        }
+        body {
+            margin: 0;
+            background-color: black;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            letter-spacing: 1px;
+            line-height: 1.4rem;
+
+            animation: fadeIn 2s;
+            opacity: 1;
+            }
+
+            @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        header {
+            width: 100%;
+            height: 30vw;        
+        }
+        #site-branding {
+            width: 500px;
+            height: 100px;
+            margin: 20px auto 20px auto;
+        }
+        #site-branding img {
+            width: 480px;
+        }
+        nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-content: space-around;
+            color: white;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+        }
+        .ulNAV {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            font-weight: 600;
+            font-size: .75rem;
+        }
+        .ulNAV li {
+            margin: 15px;
+            padding: 3px 10px;
+            border: 1px solid white;
+            border-radius: 2px;
+        }
+        .ulNAV li:hover {
+            margin: 15px;
+            padding: 3px 10px;
+            border: 2px solid white;
+            border-radius: 2px;
+            background-color: #BD271A;
+        }
+        .hero-section {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-content: space-around;
+            color: white;
+            width: 100%;
+            height: 60vw;
+            font-weight: 300;
+        }
+        .hero {
+            height: 320px;
+            background-image: url("img/big-white-tv.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .hero h1 {
+            margin: 30px 20% 0 20%;
+            font-size: 2.8rem;
+            line-height: 3.5rem;
+            text-align: center;
+        }
+        .section1 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-content: space-around;
+            color: white;
+            width: 100%;
+            height: 50vw;
+            font-weight: 300;
+        }
+        .section1 > p {
+            margin: 5%;
+            font-size: .8rem;
+            text-align: center;
+        }
+        .section2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: space-around;
+            align-items: center;
+            background-color: #6C160F;
+            width: 100%;
+            height: 50vw;
+        }
+        #Request-Service {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            color: white;
+            width: 100%;
+            height: 60vw;
+        }
+        #Request-Service input {
+            margin: 10px 0 10px 0;
+        }
+        .guarantee {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-content: space-around;
+            align-items: center;
+            background-color: #6C160F;
+            width: 100%;
+            height: 50vw;
+        }
+        .guarantee-badge {
+            margin: 0 50px;
+            background-color:black;
+            border-radius: 100px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.25), 0 0 50px rgba(0,0,0,0.1) inset;
+
+        }
+        .guarantee-badge img {
+            transform: rotate(-15deg);
+        }
+        .guarantee-text {
+            margin: 0 40px 0 0;
+            font-size: .8rem;
+            text-align: center;
+            color: white;
+            line-height: 1.2rem;
+        }
+        .guarantee-text h1 {
+            font-size: 1.4rem;
+            line-height: 1.7rem;
+        }
+        .services {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 200px;
+            background-color: #6C160F;
+            border-radius: 100px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.25), 0 0 50px rgba(0,0,0,0.1) inset;
+        }
+        .services:hover {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 200px;
+            background-color: #BD271A;
+            border-radius: 100px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.50), 0 0 50px rgba(0,0,0,0.1) inset;
+        }
+        .section2 .services h1 {
+            color: white;
+            text-align: center;
+        }
+        .section2 > p {
+            margin: 5%;
+            font-size: .8rem;
+            text-align: center;
+        }
+        .reveal{
+            position: relative;
+            transform: translateY(150px);
+            opacity: 0;
+            transition: 1s all ease;
+        }
+        
+        .reveal.active{
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+    </style>
+
+    <body id="Home">
+
+        <header>
+            <a href="#Home">
+                <div id="site-branding">
+                    <img src="img/Fairwar-Header-Logo.png"/>
+                </div>
+            </a>
+            <nav>
+                <ul class="ulNAV">
+                    <a href="#Home"><li>Home</li></a>
+                    <a href="#About"><li>About</li></a>
+                    <a href="#Request-Service"><li>Request Service</li></a>
+                </ul>
+            </nav>
+        </header>
+        <container>
+            <section class="hero-section reveal">
+                <div class="hero-divider">
+                <div class="hero">
+                    <h1>
+                        <br/>Why buy a new television when you don’t have to?
+                    </h1>
+                </div>
+                </div>
+            </section>
+            <section id="About" class="section2">
+                <div class="services reveal">
+                    <img src="img/Repair-Icon.png" width="60px">
+                    <h1> TV Repair</h1>
+
+                </div>
+                <div class="services reveal">
+                    <img src="img/Mount-Icon.png" width="60px">
+                    <h1>TV Installation</h1>
+                    
+                </div>
+                <div class="services reveal">
+                    <img src="img/Board-Icon.png" width="60px">
+                    <h1>Computer Services</h1>
+                    
+                </div>
+
+            </section>
+            <section class="section1 reveal">
+                <p>
+                    Here at Fairway Electronics, we combine the finest quality repairs with fastest service possible. We live in a technology-driven world, and we know how important it is to have your electronics be fully functional.
+                    <br><br><br>
+                </p>
+                <p>
+                    Each of our technicians are respectful, friendly, knowledgeable and are highly trained and qualified professionals. When you call us, you can rest assured that your electronics are in the best possible hands.
+                </p>
+            </section>
+            <section class="guarantee reveal">
+                <div class="guarantee-badge reveal">
+                    <img src="img/Guarantee.png" width="180px"/>
+                </div>
+                <div class="guarantee-text reveal">
+                    <h1>All of our work comes<br>with a 90-Day Guarantee!</h1>  
+                    <p>
+                        In the unlikely event that you are not satisfied with the TV repair work results, you can feel secure in knowing that we have a 90-Day Satisfaction Guarantee from your service date. If a problem arises within 90 days of the job completion date, our certified television technician come back out to your house free of charge and will perform any necessary adjustments or service at no cost to you! Because we are a word of mouth business, we will do everything in our power to satisfy you as our customer.
+                    </p>
+                </div>
+                
+            </section>
+            <section class="section1 reveal">
+                <img src="img/couple-static.jpg" width="36%" />
+                <p>
+                    Enjoy Excellent Picture And Sound Quality
+                </p>
+                <p>
+                    Serving KCMO and the greater Kansas City area.
+                </p>
+            </section>
+            <section id="Request-Service" class="reveal">
+                <br><br><br>
+                <h1>Request Service</h1>
+                <br><br><br>
+                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Email">
+                <input type="textfield" placeholder="Message">
+
+                
+            </section>
+            <section class="local reveal">
+                <img src="img/Support-Local-White.png" width="200px" height="200px" />
+            </section>
+        </container>
+
+
+    </body>
+
+    <script>
+
+        function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+  
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      var elementVisible = 150;
+  
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("active");
+      } else {
+        reveals[i].classList.remove("active");
+      }
+    }
+  }
+  
+  window.addEventListener("scroll", reveal);
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+        
+    </script>
+
+</html>
+
+
+
+
+
+  
